@@ -11,5 +11,6 @@ module dff(clk, rst, din, dout);
 endmodule
 
 interface dff_if;
-  logic clk, rst, din, dout;
+  logic clk, rst, din; //input
+  logic dout; //output
 endinterface
