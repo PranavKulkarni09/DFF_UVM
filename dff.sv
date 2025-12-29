@@ -1,13 +1,17 @@
-module dff(clk, rst, din, dout);
-  input clk, rst, din;
-  output reg dout;
+module dff
+  (
+    input clk, rst, din, ////din - data input, rst - active high synchronus
+    output reg dout ////dout - data output
+  );
+  
   always@(posedge clk)
     begin
-      if(rst)
-        dout<=0;
+      if(rst == 1'b1) 
+        dout <= 1'b0;
       else
-        dout<=din;
+        dout <= din;
     end
+  
 endmodule
 
 interface dff_if;
